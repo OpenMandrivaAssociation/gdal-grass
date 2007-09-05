@@ -1,13 +1,13 @@
 %define name gdal-grass
-%define version 1.3.2
+%define version 1.4.3
 %define release %mkrel 1
-%define grasspath %{_libdir}/grass60
+%define grasspath %{_libdir}/grass62
 
 Summary: 	GRASS plugin extension for the Geospatial Data Abstraction Library and OGR
 Name:    	%name
 Version: 	%version
 Release: 	%release
-Source0: 	http://www.gdal.org/dl/%{name}-%{version}.tar.bz2
+Source0: 	http://download.osgeo.org/gdal/%{name}-%{version}.tar.gz
 Patch:		gdal-grass-1.3.1-fix-install-prefix.patch
 License: 	MIT
 Group:   	Sciences/Geosciences
@@ -22,7 +22,6 @@ This package contains the GRASS support (plugin) for
 the GDAL/OGR libraries.
 
 %prep
-#%setup -q -n %{name}-1.3.1
 %setup -q
 %patch -p1 -b .destdir
 
@@ -44,7 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_libdir}/gdalplugins/gdal_GRASS.so
 %{_libdir}/gdalplugins/ogr_GRASS.so
-%{_datadir}/gdal/grass/etc/datum.table
-%{_datadir}/gdal/grass/etc/ellipse.table
+%{_datadir}/gdal/grass/
 %doc README
 
