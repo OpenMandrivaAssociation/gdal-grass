@@ -1,6 +1,6 @@
 %define name gdal-grass
 %define version 1.4.3
-%define release %mkrel 1
+%define release %mkrel 2
 %define grasspath %{_libdir}/grass62
 
 Summary: 	GRASS plugin extension for the Geospatial Data Abstraction Library and OGR
