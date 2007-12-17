@@ -15,7 +15,6 @@ URL:     	http://www.gdal.org/
 
 BuildRequires: proj-devel, zlib-devel, gdal-devel >= 1.3.1, grass
 Requires: gdal >= 1.3.1
-BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 This package contains the GRASS support (plugin) for
