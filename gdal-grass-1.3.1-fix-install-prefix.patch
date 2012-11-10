@@ -1,0 +1,29 @@
+--- gdal-grass-1.3.1/Makefile.in~	2006-03-01 17:28:32.000000000 +0200
++++ gdal-grass-1.3.1/Makefile.in	2006-03-23 19:17:50.000000000 +0200
+@@ -23,16 +23,16 @@
+ default:	$(GLIBNAME) $(OLIBNAME)
+ 
+ install:	default
+-	install -d $(AUTOLOAD_DIR)
+-	cp $(GLIBNAME) $(AUTOLOAD_DIR)
+-	cp $(OLIBNAME) $(AUTOLOAD_DIR)
+-	test -d ${GRASSTABLES_DIR} || mkdir ${GRASSTABLES_DIR}
+-	test -d ${GRASSTABLES_DIR}/etc || mkdir ${GRASSTABLES_DIR}/etc
+-	cp @GRASS_GISBASE@/etc/ellipse.table ${GRASSTABLES_DIR}/etc
+-	cp @GRASS_GISBASE@/etc/datum.table @GRASS_GISBASE@/etc/datumtransform.table ${GRASSTABLES_DIR}/etc
+-	test -d ${GRASSTABLES_DIR}/driver || mkdir ${GRASSTABLES_DIR}/driver
+-	test -d ${GRASSTABLES_DIR}/driver/db || mkdir ${GRASSTABLES_DIR}/driver/db
+-	cp -r @GRASS_GISBASE@/driver/db/* ${GRASSTABLES_DIR}/driver/db/
++	install -d $(DESTDIR)$(AUTOLOAD_DIR)
++	cp $(GLIBNAME) $(DESTDIR)$(AUTOLOAD_DIR)
++	cp $(OLIBNAME) $(DESTDIR)$(AUTOLOAD_DIR)
++	test -d $(DESTDIR)${GRASSTABLES_DIR} || mkdir -p $(DESTDIR)${GRASSTABLES_DIR}
++	test -d $(DESTDIR)${GRASSTABLES_DIR}/etc || mkdir -p $(DESTDIR)${GRASSTABLES_DIR}/etc
++	cp @GRASS_GISBASE@/etc/ellipse.table $(DESTDIR)${GRASSTABLES_DIR}/etc
++	cp @GRASS_GISBASE@/etc/datum.table @GRASS_GISBASE@/etc/datumtransform.table $(DESTDIR)${GRASSTABLES_DIR}/etc
++	test -d $(DESTDIR)${GRASSTABLES_DIR}/driver || mkdir -p $(DESTDIR)${GRASSTABLES_DIR}/driver
++	test -d $(DESTDIR)${GRASSTABLES_DIR}/driver/db || mkdir -p $(DESTDIR)${GRASSTABLES_DIR}/driver/db
++	cp -r @GRASS_GISBASE@/driver/db/* $(DESTDIR)${GRASSTABLES_DIR}/driver/db/
+ 
+ clean:
+ 	rm -f $(OLIBNAME) $(GLIBNAME) *.o 
