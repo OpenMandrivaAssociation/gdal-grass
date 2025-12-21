@@ -13,6 +13,11 @@ Patch1:		gdal-grass-1.4.3-ldflags.patch
 License: 	MIT
 Group:   	Sciences/Geosciences
 URL:     	https://www.gdal.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gdal-devel >= 1.3.1, grass >= 6.4
 Requires: gdal >= 1.3.1
 Requires:	grass >= 6.4
